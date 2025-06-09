@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.situmorang.id.situmorangapps.controller.LoginController"
+           stylesheets="@main-view.css">
+
+    <!-- Background Soft Grey -->
+    <AnchorPane styleClass="login-background"/>
+
+    <!-- Login Card Centered -->
+    <VBox alignment="CENTER" spacing="20">
+        <VBox spacing="15"
+              alignment="CENTER"
+              styleClass="login-card"
+              maxWidth="360"
+              prefWidth="320">
+            <Label text="👤" styleClass="login-icon"/>
+            <Label text="LOGIN CASHIERTA" styleClass="login-title"/>
+
+            <VBox spacing="10" maxWidth="280">
+                <TextField fx:id="usernameField" promptText="Masukkan username" styleClass="login-field"/>
+                <PasswordField fx:id="passwordField" promptText="Masukkan password" styleClass="login-field"/>
+                <Button text="🔐 Login" onAction="#handleLogin" styleClass="menu-button"/>
+            </VBox>
+        </VBox>
+    </VBox>
+
+</StackPane>

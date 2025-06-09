@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.situmorang.id.situmorangapps.controller.ProductViewController"
+            styleClass="main-pane"
+            stylesheets="@main-view.css">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" styleClass="header-bar">
+            <Button text="⬅ Kembali Ke Menu Utama"
+                    onAction="#onBackToMain"
+                    styleClass="modern-back-button"/>
+            <Label text="📦 Manajemen Produk" styleClass="header-label"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="10">
+            <HBox maxWidth="900" spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="searchField" promptText="Cari Produk..."/>
+                <Button text="🔍 Cari" onAction="#onSearchProduct"/>
+                <Button text="🔄 Reset" onAction="#onResetSearch"/>
+            </HBox>
+            <VBox maxWidth="900" alignment="TOP_CENTER">
+                <TableView fx:id="productTable">
+                    <columns>
+                        <TableColumn fx:id="colNumber" text="No" prefWidth="50"/>
+                        <TableColumn fx:id="colName" text="Nama Produk" prefWidth="150"/>
+                        <TableColumn fx:id="colPrice" text="Harga Jual" prefWidth="100"/>
+                        <TableColumn fx:id="colPriceIn" text="Harga Beli" prefWidth="100"/>
+                        <TableColumn fx:id="colSourceStoreName" text="Nama Supplier" prefWidth="150"/>
+                        <TableColumn fx:id="colStock" text="Stok" prefWidth="80"/>
+                        <TableColumn fx:id="colUnit" text="Unit/Satuan" prefWidth="80"/>
+                        <TableColumn fx:id="colBarcode" text="Barcode" prefWidth="100"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox spacing="10" alignment="CENTER" style="-fx-padding: 10 10 20 10;"> <!-- tambah padding bawah 20 -->
+            <VBox spacing="10" maxWidth="900" alignment="CENTER_LEFT">
+                <HBox spacing="10">
+                    <TextField fx:id="nameField" promptText="Nama Produk"/>
+                    <TextField fx:id="priceField" promptText="Harga Jual"/>
+                    <TextField fx:id="priceInField" promptText="Harga Beli"/>
+                    <TextField fx:id="sourceStoreNameField" promptText="Nama Supplier" HBox.hgrow="ALWAYS"/>
+                </HBox>
+                <HBox spacing="10">
+                    <TextField fx:id="stockField" promptText="Stok"/>
+                    <TextField fx:id="unitField" promptText="Unit"/>
+                    <TextField fx:id="barcodeField" promptText="Barcode"/>
+
+                    <Button text="Tambah" onAction="#onAddProduct" styleClass="add-button" minWidth="80"/>
+                    <Button text="Update" onAction="#onUpdateProduct" styleClass="update-button" minWidth="80"/>
+                    <Button text="Hapus" onAction="#onDeleteProduct" styleClass="delete-button" minWidth="80"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </bottom>
+
+
+</BorderPane>

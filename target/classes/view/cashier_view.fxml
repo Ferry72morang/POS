@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.situmorang.id.situmorangapps.controller.CashierController"
+            prefWidth="1024" prefHeight="720"
+            styleClass="main-pane" stylesheets="@main-view.css">
+
+    <top>
+        <VBox spacing="10" styleClass="header-bar">
+            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10;">
+                <Button text="⬅ Kembali ke Menu Utama"
+                        onAction="#onBackToMain"
+                        styleClass="modern-back-button"/>
+                <Label text="Kasir / Penjualan" styleClass="header-label"/>
+            </HBox>
+
+            <HBox spacing="10" style="-fx-padding: 0 10 10 10;">
+                <Label text="Barcode:"/>
+                <TextField fx:id="barcodeField" promptText="Scan atau ketik barcode..." prefWidth="400" styleClass="text-field"/>
+            </HBox>
+
+            <GridPane hgap="10" vgap="10" style="-fx-padding: 0 10 10 10;">
+                <!-- Grid constraint tetap -->
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="30"/>
+                    <ColumnConstraints percentWidth="20"/>
+                    <ColumnConstraints percentWidth="20"/>
+                    <ColumnConstraints percentWidth="20"/>
+                </columnConstraints>
+
+                <rowConstraints>
+                    <RowConstraints minHeight="30"/>
+                </rowConstraints>
+
+                <Label text="Produk" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <Label text="Jumlah" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <TextField fx:id="productNameField" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                           promptText="Nama Produk" editable="false" disable="true" prefWidth="300" styleClass="text-field"/>
+                <TextField fx:id="quantityField" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                           promptText="Jumlah" prefWidth="100" styleClass="text-field"/>
+                <Label fx:id="stockLabel" text="Stok: -" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                <HBox spacing="5" GridPane.rowIndex="1" GridPane.columnIndex="3">
+                    <Button text="🔍 Cari" onAction="#onSearchProduct" styleClass="menu-button-tambah"/>
+                    <Button text="🛒 Tambah" onAction="#onAddToCart" styleClass="menu-button-tambah"/>
+                </HBox>
+            </GridPane>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="cartTable" prefHeight="400" styleClass="table-view">
+            <columns>
+                <TableColumn fx:id="colProductName" text="Nama Produk" prefWidth="300"/>
+                <TableColumn fx:id="colQuantity" text="Jumlah" prefWidth="100"/>
+                <TableColumn fx:id="colPrice" text="Harga" prefWidth="150"/>
+                <TableColumn fx:id="colTotal" text="Subtotal" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="20" styleClass="footer-bar" alignment="CENTER_RIGHT">
+            <Label fx:id="totalLabel" text="Total: Rp 0" styleClass="total-label"/>
+            <Button fx:id="removeItemButton" text="Hapus Item" onAction="#onRemoveItem" styleClass="menu-button"/>
+            <Button text="Bayar" onAction="#onCheckout" styleClass="menu-button"/>
+        </HBox>
+    </bottom>
+</BorderPane>
+

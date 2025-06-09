@@ -1,0 +1,34 @@
+[22:36:07.459] Running candle.exe
+[22:36:07.470] Running C:\Program Files (x86)\WiX Toolset v3.14\bin\candle.exe
+[22:36:07.527] Running light.exe
+[22:36:07.530] Running C:\Program Files (x86)\WiX Toolset v3.14\bin\light.exe
+[22:36:07.607] jdk.jpackage.internal.ConfigException: The configured main jar does not exist situmorangapps-1.0-SNAPSHOT-shaded.jar in the input directory
+	at jdk.jpackage/jdk.jpackage.internal.LauncherData.createNonModular(LauncherData.java:193)
+	at jdk.jpackage/jdk.jpackage.internal.LauncherData.create(LauncherData.java:113)
+	at jdk.jpackage/jdk.jpackage.internal.StandardBundlerParam.lambda$static$0(StandardBundlerParam.java:84)
+	at jdk.jpackage/jdk.jpackage.internal.BundlerParamInfo.fetchFrom(BundlerParamInfo.java:114)
+	at jdk.jpackage/jdk.jpackage.internal.BundlerParamInfo.fetchFrom(BundlerParamInfo.java:88)
+	at jdk.jpackage/jdk.jpackage.internal.AppImageBundler.validate(AppImageBundler.java:66)
+	at jdk.jpackage/jdk.jpackage.internal.WinMsiBundler.validate(WinMsiBundler.java:290)
+	at jdk.jpackage/jdk.jpackage.internal.WinExeBundler.validate(WinExeBundler.java:93)
+	at jdk.jpackage/jdk.jpackage.internal.Arguments.generateBundle(Arguments.java:675)
+	at jdk.jpackage/jdk.jpackage.internal.Arguments.processArguments(Arguments.java:550)
+	at jdk.jpackage/jdk.jpackage.main.Main.execute(Main.java:91)
+	at jdk.jpackage/jdk.jpackage.main.Main.main(Main.java:52)
+[22:36:07.609] jdk.jpackage.internal.PackagerException: Bundler EXE Installer Package skipped because of a configuration problem: The configured main jar does not exist situmorangapps-1.0-SNAPSHOT-shaded.jar in the input directory 
+Advice to fix: The main jar must be specified relative to the input directory (not an absolute path), and must exist within that directory
+	at jdk.jpackage/jdk.jpackage.internal.Arguments.generateBundle(Arguments.java:688)
+	at jdk.jpackage/jdk.jpackage.internal.Arguments.processArguments(Arguments.java:550)
+	at jdk.jpackage/jdk.jpackage.main.Main.execute(Main.java:91)
+	at jdk.jpackage/jdk.jpackage.main.Main.main(Main.java:52)
+Caused by: jdk.jpackage.internal.ConfigException: The configured main jar does not exist situmorangapps-1.0-SNAPSHOT-shaded.jar in the input directory
+	at jdk.jpackage/jdk.jpackage.internal.LauncherData.createNonModular(LauncherData.java:193)
+	at jdk.jpackage/jdk.jpackage.internal.LauncherData.create(LauncherData.java:113)
+	at jdk.jpackage/jdk.jpackage.internal.StandardBundlerParam.lambda$static$0(StandardBundlerParam.java:84)
+	at jdk.jpackage/jdk.jpackage.internal.BundlerParamInfo.fetchFrom(BundlerParamInfo.java:114)
+	at jdk.jpackage/jdk.jpackage.internal.BundlerParamInfo.fetchFrom(BundlerParamInfo.java:88)
+	at jdk.jpackage/jdk.jpackage.internal.AppImageBundler.validate(AppImageBundler.java:66)
+	at jdk.jpackage/jdk.jpackage.internal.WinMsiBundler.validate(WinMsiBundler.java:290)
+	at jdk.jpackage/jdk.jpackage.internal.WinExeBundler.validate(WinExeBundler.java:93)
+	at jdk.jpackage/jdk.jpackage.internal.Arguments.generateBundle(Arguments.java:675)
+	... 3 more

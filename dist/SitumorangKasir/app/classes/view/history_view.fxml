@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<SplitPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.situmorang.id.situmorangapps.controller.HistoryController"
+           styleClass="main-pane"
+           stylesheets="@main-view.css">
+
+    <items>
+        <!-- Panel kiri: daftar transaksi -->
+        <VBox spacing="10" styleClass="history-pane">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="📖 Daftar Transaksi" styleClass="header-label-small"/>
+
+            <!-- 🔍 Filter tanggal -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <DatePicker fx:id="fromDatePicker" promptText="Dari tanggal"/>
+                <DatePicker fx:id="toDatePicker" promptText="Sampai tanggal"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button text="🔍 Filter" onAction="#onFilterClicked"/>
+                <Button text="📋 Semua" onAction="#onAllDataClicked"/>
+                <Button text="🖨 Cetak Laporan" onAction="#onPrintReport"/>
+            </HBox>
+
+            <!-- 📋 Tabel transaksi -->
+            <TableView fx:id="salesTable" styleClass="table-view">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="100"/>
+                    <TableColumn fx:id="colDate" text="Tanggal" prefWidth="200"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <!-- Panel kanan: detail transaksi -->
+        <VBox spacing="10" styleClass="history-pane">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="🧾 Detail Transaksi" styleClass="header-label-small"/>
+
+            <TableView fx:id="itemsTable" styleClass="table-view">
+                <columns>
+                    <TableColumn fx:id="colProduct" text="Produk" prefWidth="200"/>
+                    <TableColumn fx:id="colQty" text="Qty" prefWidth="80"/>
+                    <TableColumn fx:id="colPrice" text="Harga" prefWidth="120"/>
+                </columns>
+            </TableView>
+
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+                <Label text="Total:" style="-fx-font-size: 14px;"/>
+                <Label fx:id="totalLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </items>
+</SplitPane>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.situmorang.id.situmorangapps.controller.MainViewController"
+            stylesheets="@main-view.css" styleClass="main-pane" prefWidth="800" prefHeight="600">
+
+    <!-- HEADER -->
+    <top>
+        <HBox alignment="CENTER" styleClass="header-bar" spacing="10" prefHeight="60">
+            <Label text="===CASHIERTA===" styleClass="header-label"/>
+        </HBox>
+    </top>
+
+    <!-- MENU TENGAH -->
+    <center>
+        <VBox spacing="20" alignment="CENTER" styleClass="button-container" prefWidth="400">
+            <Button text="🛒  Kasir / Penjualan" onAction="#openCashierView" styleClass="menu-button"/>
+            <Button text="📦  Manajemen Produk" onAction="#openProductView" styleClass="menu-button"/>
+            <Button text="📖  History Transaksi" onAction="#openHistoryView" styleClass="menu-button"/>
+        </VBox>
+    </center>
+
+    <!-- FOOTER -->
+    <bottom>
+        <HBox alignment="CENTER" styleClass="footer-bar" prefHeight="40">
+            <Label text="© 2025 Situmorang Apps" styleClass="footer-label"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.situmorang.id.situmorangapps.controller.MainViewController"
+            stylesheets="@main-view.css" styleClass="main-pane" prefWidth="800" prefHeight="600">
+
+    <!-- HEADER -->
+    <top>
+        <HBox alignment="CENTER_LEFT" styleClass="header-bar" spacing="5" prefHeight="50">
+            <ImageView fx:id="logoImage" fitWidth="160" fitHeight="160" preserveRatio="true">
+                <image>
+                    <Image url="@/cashierta.png"/>
+                </image>
+            </ImageView>
+
+            <Pane HBox.hgrow="ALWAYS"/> <!-- Spacer -->
+            <Button text="🔒 Logout" onAction="#onLogout" styleClass="logout-button"/>
+        </HBox>
+    </top>
+
+    <!-- MENU TENGAH -->
+    <center>
+        <VBox spacing="20" alignment="CENTER" styleClass="button-container" prefWidth="400">
+            <Button text="🛒  Kasir / Penjualan" onAction="#openCashierView" styleClass="menu-button"/>
+            <Button fx:id="productButton" text="📦  Manajemen Produk" onAction="#openProductView" styleClass="menu-button"/>
+            <Button fx:id="historyButton" text="📖  History Transaksi" onAction="#openHistoryView" styleClass="menu-button"/>
+        </VBox>
+    </center>
+
+    <!-- FOOTER -->
+    <bottom>
+        <HBox alignment="CENTER" styleClass="footer-bar" prefHeight="40">
+            <Label text="© 2025 Situmorang Apps" styleClass="footer-label"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

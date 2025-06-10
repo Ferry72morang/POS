@@ -19,6 +19,10 @@ A simple and elegant Point of Sale (POS) desktop application built with JavaFX, 
 ### 📊 Sales History
 ![image](https://github.com/user-attachments/assets/4d5e85c2-1c8f-4d29-8276-2932a190c493)
 
+### Sales Report
+![image](https://github.com/user-attachments/assets/81f64012-4a41-408a-b29f-bd7492fe3157)
+
+
 
 ---
 
